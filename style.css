@@ -1,4 +1,3 @@
-/* Core Global Layout Variables for Dark/Light Themes */
 :root {
     --bg-color: #f8f9fa;
     --text-color: #212529;
@@ -51,7 +50,6 @@ main {
     color: var(--text-color);
 }
 
-/* Adjust light/dark elements for custom classes */
 .theme-toggle-btn {
     cursor: pointer;
 }

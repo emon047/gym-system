@@ -22,13 +22,13 @@ CREATE TABLE IF NOT EXISTS membership_plans (
     duration_months INT NOT NULL
 );
 
--- Insert Dummy Membership Plans
+-- 3. Insert Dummy Membership Plans
 INSERT INTO membership_plans (plan_name, price, duration_months) VALUES 
 ('Basic Monthly', 29.99, 1),
 ('Standard 6-Month', 149.99, 6),
 ('Premium Annual', 249.99, 12);
 
--- 3. Payments Table
+-- 4. Payments Table
 CREATE TABLE IF NOT EXISTS payments (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS payments (
     FOREIGN KEY (plan_id) REFERENCES membership_plans(id) ON DELETE CASCADE
 );
 
--- 4. Attendance Table
+-- 5. Attendance Table
 CREATE TABLE IF NOT EXISTS attendance (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS attendance (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
--- 5. Login History Table
+-- 6. Login History Table
 CREATE TABLE IF NOT EXISTS login_history (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS login_history (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
--- 6. Password Resets Table
+-- 7. Password Resets Table
 CREATE TABLE IF NOT EXISTS password_resets (
     id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(100) NOT NULL,

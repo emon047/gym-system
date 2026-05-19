@@ -6,7 +6,6 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Extract tier matrix records structures directly
 $query = "SELECT id, plan_name, price, duration_months FROM membership_plans";
 $plans = mysqli_query($conn, $query);
 ?>

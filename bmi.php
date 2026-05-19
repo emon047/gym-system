@@ -18,12 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $weight = floatval($weightInput);
     $height = floatval($heightInput) / 100; // Convert centimeters to meters
 
-    // Validate inputs are greater than zero before performing division
     if ($weight > 0 && $height > 0) {
-        // Core BMI Formula: weight (kg) / height^2 (m)
         $bmi = round(($weight / ($height * $height)), 2);
 
-        // Determine health category based on standard BMI thresholds
+        //determining health category 
         if ($bmi < 18.5) {
             $category = "Underweight";
             $message = "Consider building mass with a customized nutrition strategy.";
@@ -56,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Force single screen view matching Home, Dashboard, and Membership layouts */
         html, body {
             height: 100vh;
             overflow: hidden;
@@ -75,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         .custom-card {
             border: 1px solid #e0e0e0 !important;
-            border-top: 4px solid #0d6efd !important; /* Premium Blue Top Accent line to match home style */
+            border-top: 4px solid #0d6efd !important; 
             border-radius: 12px !important;
             background-color: #ffffff;
         }
@@ -96,7 +93,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <?php include 'navbar.php'; ?>
 
     <main class="container">
-        <!-- Compact Section Header (Matches home page typographic distribution) -->
         <div class="text-center mb-3">
             <span class="badge bg-primary px-3 py-1.5 rounded-pill mb-2 fw-semibold tracking-wide" style="font-size: 0.75rem;">HEALTH LOGISTICS</span>
             <h3 class="fw-bold text-dark mb-1">Body Mass Index Calculator</h3>

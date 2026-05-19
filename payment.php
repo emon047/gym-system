@@ -16,7 +16,6 @@ if (!$plan_id) {
     exit();
 }
 
-// Find tracking properties matching parameter inputs
 $stmt = mysqli_prepare($conn, "SELECT plan_name, price FROM membership_plans WHERE id = ?");
 mysqli_stmt_bind_param($stmt, "i", $plan_id);
 mysqli_stmt_execute($stmt);
@@ -24,14 +23,13 @@ $plan = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
 mysqli_stmt_close($stmt);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect simulated mock card elements
     $card_num = $_POST['card_number'];
 
     if (strlen($card_num) < 16) {
-        $error = "Simulated transaction rejected. Card details are invalid.";
+        $error = "transaction rejected. Card details are invalid.";
     } else {
         // Construct dummy mock success reference sequence token
-        $tx_id = "TXN-" . strtoupper(bin2hex(random_bytes(6)));
+        $tx_id = "TXN-" ;
         $status = "Success";
         $amount = $plan['price'];
 

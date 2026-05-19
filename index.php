@@ -12,8 +12,8 @@ require_once 'config.php';
     <!-- FontAwesome for clean iconography -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
     <style>
-        /* Custom layout optimization to enforce a true single-screen look */
         html, body {
             height: 100%;
         }
@@ -38,22 +38,21 @@ require_once 'config.php';
 <body>
     <?php include 'navbar.php'; ?>
 
-    <!-- Main container utilizing flex-grow to optimally fill up the viewport -->
     <main class="container my-auto py-4">
         <div class="row align-items-center g-4 hero-section p-4 p-md-5 shadow-sm border m-1">
             
-            <!-- Left Side: Interactive Welcome Hook -->
+            <!-- Left Side -->
             <div class="col-lg-6 text-center text-lg-start">
-                <span class="badge bg-primary px-3 py-2 rounded-pill mb-3 fw-semibold tracking-wide">FITNESS MANAGEMENT ELITE</span>
+                <span class="badge bg-primary px-3 py-2 rounded-pill mb-3 fw-semibold">FITNESS MANAGEMENT ELITE</span>
                 <h1 class="display-5 fw-extrabold text-dark mb-3 lh-sm">
-                    Build Your <span class="text-primary">Elite</span> <br class="d-none d-lg-inline">Fitness Journey
+                    Build Your Elite <br class="d-none d-lg-inline">Fitness Journey
                 </h1>
-                <p class="fs-5 text-muted mb-4 col-lg-11 px-0">
+                <p class="fs-5 text-muted mb-4 col-lg-11">
                     Track workouts, structure goals, manage subscriptions, map your physical metrics, and maintain attendance records seamlessly.
                 </p>
                 <div>
                     <?php if(!isset($_SESSION['user_id'])): ?>
-                        <a class="btn btn-primary btn-lg px-4 me-2 shadow-sm fw-bold" href="register.php" role="button">
+                        <a class="btn btn-primary btn-lg px-4 shadow-sm fw-bold" href="register.php" role="button">
                             <i class="fa-solid fa-user-plus me-2"></i>Get Started Today
                         </a>
                         <a class="btn btn-outline-secondary btn-lg px-4 fw-bold" href="login.php" role="button">
@@ -67,12 +66,12 @@ require_once 'config.php';
                 </div>
             </div>
 
-            <!-- Right Side: Clean Stacked Feature Showcases -->
+            <!-- Right Side -->
             <div class="col-lg-6">
                 <div class="d-flex flex-column gap-3">
                     
                     <!-- Feature 1 -->
-                    <div class="card border-0 shadow-sm p-3 bg-white rounded-3">
+                    <div class="card shadow-sm p-3 bg-white rounded-3">
                         <div class="d-flex align-items-center">
                             <div class="feature-icon bg-primary-subtle text-primary me-3 fs-5">
                                 <i class="fa-solid fa-dumbbell"></i>

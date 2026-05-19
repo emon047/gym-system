@@ -16,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($email) || empty($password)) {
         $error = "Please enter all fields.";
     } else {
-        // REMOVED: is_verified from the SELECT check
         $stmt = mysqli_prepare($conn, "SELECT id, name, password FROM users WHERE email = ?");
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
@@ -27,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             mysqli_stmt_fetch($stmt);
 
             if (password_verify($password, $hashed_password)) {
-                // REMOVED: The verification check condition layer entirely
                 
                 // Start authenticated session successfully
                 $_SESSION['user_id'] = $id;

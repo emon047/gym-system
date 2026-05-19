@@ -77,7 +77,6 @@ $logs_res = mysqli_stmt_get_result($stmt);
     <?php include 'navbar.php'; ?>
 
     <main class="container">
-        <!-- Compact Section Header -->
         <div class="text-center mb-4">
             <h3 class="fw-bold text-dark mb-1">Security Audit Terminal</h3>
             <p class="text-muted small mb-2">Monitor active system session connections and verified access parameters safely.</p>

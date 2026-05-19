@@ -1,14 +1,13 @@
 <?php
 require_once 'config.php';
 
-// Redirect to dashboard if session exists
 if (isset($_SESSION['user_id'])) {
     header("Location: dashboard.php");
     exit();
 }
 
-$error = '';
-$success = '';
+$error = '';//store error message
+$success = '';//store success message
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = sanitize($_POST['name']);
@@ -43,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Hash password
             $hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
-            // UPDATED: 'is_verified' is now explicitly assigned 1 for instant system access activation
+            // UPDATED: already verified no verification needed
             $insert_query = "INSERT INTO users (name, email, password, phone, gender, is_verified) VALUES (?, ?, ?, ?, ?, 1)";
             $stmt = mysqli_prepare($conn, $insert_query);
             mysqli_stmt_bind_param($stmt, "sssss", $name, $email, $hashed_password, $phone, $gender);
@@ -63,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 mysqli_stmt_execute($log_stmt);
                 mysqli_stmt_close($log_stmt);
 
-                // Redirect user to workspace dashboard directly without email blocks
                 header("Location: dashboard.php");
                 exit();
             } else {

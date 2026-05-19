@@ -11,7 +11,6 @@ $message = '';
 $today = date('Y-m-d');
 
 if (isset($_POST['mark_attendance'])) {
-    // Try marking check in trace record updates
     $stmt = mysqli_prepare($conn, "INSERT INTO attendance (user_id, attendance_date, status) VALUES (?, ?, 'Present')");
     mysqli_stmt_bind_param($stmt, "is", $user_id, $today);
 

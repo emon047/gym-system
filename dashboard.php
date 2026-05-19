@@ -1,7 +1,6 @@
 <?php
 require_once 'config.php';
 
-// Route back to sign in window frame if missing active credentials
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();

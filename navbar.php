@@ -1,6 +1,7 @@
 <?php require_once 'config.php';
 $currentPage = basename($_SERVER['PHP_SELF'], '.php');
 ?>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
         <a class="navbar-brand fw-bold" href="index.php">🏋️ GymSystem</a>

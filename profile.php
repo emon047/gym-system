@@ -50,7 +50,6 @@ mysqli_stmt_close($stmt);
             background-color: #ffffff;
         }
 
-        /* Modern structured data rows instead of bordered tables */
         .profile-row {
             display: flex;
             justify-content: space-between;

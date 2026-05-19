@@ -23,9 +23,3 @@ function sanitize($data)
 {
     return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
 }
-function sendSystemEmail($toEmail, $subject, $body)
-{
-    // Email sending is disabled because the app no longer uses PHPMailer/email verification.
-    return false;
-}
-?>
